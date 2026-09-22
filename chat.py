@@ -34,7 +34,7 @@ while True:
     answer = ""
     print("AI：", end="", flush=True)
     for chunk in stream:
-        piece = chunk.choices[0].delta.content
+        piece = chunk.choices[0].delta.content if chunk.choices else None
         if piece:
             print(piece, end="", flush=True)
             answer += piece
